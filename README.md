@@ -1,15 +1,14 @@
 # Setup - Install Redux Toolkit and React-Redux
-1. This project was first initialized with [Create React App](https://create-react-app.dev/)
+This project was first initialized with [Create React App](https://create-react-app.dev/). If you want to start from scratch, use this command rather than cloning the project:
 ```
 npx create-react-app name-of-your-app
 ```
-
-2. Add the Redux Toolkit and React-Redux packages to your project:
+Make sure to run npm install in your project, and also to add the Redux Toolkit and React-Redux packages to your project:
 
 ```
 npm install @reduxjs/toolkit react-redux
 ```
-### Note: The only files you need to uncomment in are index.js, store.js, and then counter.js.
+### Note: The only files you need to uncomment in are index.js and counter.js.
 
 # Store Configuration
 ## What is the store? (`store.js`)
