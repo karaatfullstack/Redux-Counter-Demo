@@ -1,30 +1,30 @@
-# Introduction
-Lets take about Redux Toolkit this demo will briefly introduce you to Redux Toolkitand teach you how to start using it correctly.
-
 # Setup - Install Redux Toolkit and React-Redux
-Add the Redux Toolkit and React-Redux packages to your project:
+1. This project was first initialized with [Create React App](https://create-react-app.dev/)
+```
+npx create-react-app name-of-your-app
+```
+
+2. Add the Redux Toolkit and React-Redux packages to your project:
 
 ```
 npm install @reduxjs/toolkit react-redux
 ```
-### Note: The only files I need to uncomment in are index.js, store.js, then Counter.js.
+### Note: The only files you need to uncomment in are index.js, store.js, and then counter.js.
 
 # Store configuration
 ## What is the store (`store.js`)
-I have already create a boilerplate `store.js` to build from (show `./redux/store.js`)
-This is where we will add our slices that we create. If you are not fimilar with the term Slice in terms of redux, you
-can think of it as a "slice" of your redux store that holds specific functionality or data. For our example we will be
-creating a simple couner slice/reducer to hold our current count.
+I have already created a boilerplate `store.js` to build from (show `./redux/store.js`)
+This is where we will add our slices that we create. Think of a slice as a "slice" of your redux store that holds specific functionality or data. For our example we will be creating a simple couner slice/reducer to hold our current count.
 
-## Adding `<Provider>` To provide our store to our app
-(Go to index.js)
+## Adding `<Provider>` 
+1. Go to index.js
 By uncommenting the provider and adding in the two imports, we are providing our newly created redux store to the index.js by using the `<Provider>` element. Its provided to our `index.js` because that  wraps our app.
 
 Our `App` component and all children components can now read state from the store, and dispatch actions to the store. However, we're still missing something. Where and how are the React-Redux hooks finding the right Redux store? A hook is a JS function, so it can't automatically import a store from store.js by itself.
 
 Instead, we have to specifically tell React-Redux what store we want to use in our components. We do this by rendering a `<Provider>` component around our entire `<App>`, and passing the Redux store as a prop to `<Provider>`. After we do this "once", every component in the application will be able to access the Redux store if it needs to.
 
-Let's add that to our main index.js file:
+Let's add that to our main index.js file
 
 ## Create a Redux State Slice
 I have already added the file named `./redux/slice/counterSlice.js`. In that file we import `createSlice` API from Redux Toolkit.
